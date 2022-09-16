@@ -36,7 +36,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setting up the server up and running
 
-run `npm run dev` to start the development server
+run `npm start` to start the development server
 
 ### Run tests
 
