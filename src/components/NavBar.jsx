@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <nav>
-      <NavLink to='/'>Bookstore CMS</NavLink>
-      <NavLink to='/'>Books</NavLink>
-      <NavLink to='categories'>Categories</NavLink>
+      <Link to='/'>Bookstore CMS</Link>
+      <Link to='/'>Books</Link>
+      <Link to='categories'>Categories</Link>
     </nav>
   );
 };
