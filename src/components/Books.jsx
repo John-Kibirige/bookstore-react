@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Book from './Book';
+import CreateNewBook from './CreateNewBook';
 
 const Books = () => {
   const [books, setBooks] = useState([
@@ -14,12 +15,7 @@ const Books = () => {
   return (
     <div className='books-container'>
       <div className='book-elements'>{bookElements}</div>
-      <form action='#'>
-        <h3>Add new book</h3>
-        <input type='text' className='bk-title' placeholder='title' />
-        <input type='text' className='author' placeholder='author' />
-        <button className='add-book-btn'>add book</button>
-      </form>
+      <CreateNewBook />
     </div>
   );
 };
