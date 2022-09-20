@@ -12,7 +12,7 @@ const addBookActionCreator = (title, author, id) => ({
   id,
 });
 
-const removeBookActionCreator = (title, author, id) => ({
+const removeBookActionCreator = (id) => ({
   type: REMOVE_BOOK,
   id,
 });

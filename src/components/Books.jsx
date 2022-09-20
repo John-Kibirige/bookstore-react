@@ -7,7 +7,7 @@ const Books = () => {
   const books = useSelector((state) => state.bookReducer);
 
   const bookElements = books.map((book) => (
-    <Book title={book.title} author={book.author} key={book.title} />
+    <Book title={book.title} author={book.author} key={book.id} id={book.id} />
   ));
   return (
     <div className='books-container'>
