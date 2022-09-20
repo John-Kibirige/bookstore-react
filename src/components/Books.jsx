@@ -4,11 +4,7 @@ import Book from './Book';
 import CreateNewBook from './CreateNewBook';
 
 const Books = () => {
-  const [books, setBooks] = useState([
-    { title: 'title', author: 'author' },
-    { title: 'title', author: 'author' },
-    { title: 'title', author: 'author' },
-  ]);
+  const [books, setBooks] = useState();
   const bookElements = books.map((book) => (
     <Book title={book.title} author={book.author} key={book.title} />
   ));

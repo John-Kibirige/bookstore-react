@@ -1,3 +1,4 @@
+
 // Actions
 const ADD_BOOK = 'bookstore/book/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/book/REMOVE_BOOK';
@@ -17,8 +18,14 @@ const removeBookActionCreator = (title, author, id) => ({
   id,
 });
 
+const initialState = [
+  { title: 'title', author: 'author' },
+  { title: 'title', author: 'author' },
+  { title: 'title', author: 'author' },
+];
+
 // Creating the reducer function to handle this
-const bookReducer = (state = [], action) => {
+const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [
