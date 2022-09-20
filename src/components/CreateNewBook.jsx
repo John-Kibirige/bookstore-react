@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { v4 as getUniqueId } from 'uuid';
 import { addBookActionCreator } from '../redux/books/book';
