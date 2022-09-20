@@ -5,7 +5,8 @@ import { v4 as getUniqueId } from 'uuid';
 import { addBookActionCreator } from '../redux/books/book';
 
 const CreateNewBook = () => {
-  const [formData, setFormData] = useState({ title: '', author: '' });
+  const initialLocalState = { title: '', author: '' };
+  const [formData, setFormData] = useState(initialLocalState);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -15,6 +16,7 @@ const CreateNewBook = () => {
         addBookActionCreator(formData.title, formData.author, getUniqueId())
       );
     }
+    setFormData(initialLocalState);
   };
 
   const handleChange = (e) => {
