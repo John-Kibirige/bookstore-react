@@ -3,14 +3,14 @@ const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
 // Action creators
-const addBookActionCreator = (title, author) => ({
+const addBookActionCreator = (title, author, id) => ({
   type: ADD_BOOK,
   title,
   author,
   id,
 });
 
-const removeBookActionCreator = (title, author) => ({
+const removeBookActionCreator = (title, author, id) => ({
   type: REMOVE_BOOK,
   title,
   author,
@@ -30,15 +30,11 @@ const bookReducer = (state = [], action) => {
         },
       ];
     case REMOVE_BOOK:
-      return state.map((book) => {
-        if (book.id !== action.id) {
-          return book;
-        }
-      });
+      return state.filter((bk) => bk.id !== action.id);
     default:
       return state;
   }
 };
 
-export {addBookActionCreator, removeBookActionCreator};
+export { addBookActionCreator, removeBookActionCreator };
 export default bookReducer;
