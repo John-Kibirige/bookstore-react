@@ -1,3 +1,4 @@
+import { v4 as getUniqueId } from 'uuid';
 
 // Actions
 const ADD_BOOK = 'bookstore/book/ADD_BOOK';
@@ -13,15 +14,13 @@ const addBookActionCreator = (title, author, id) => ({
 
 const removeBookActionCreator = (title, author, id) => ({
   type: REMOVE_BOOK,
-  title,
-  author,
   id,
 });
 
 const initialState = [
-  { title: 'title', author: 'author' },
-  { title: 'title', author: 'author' },
-  { title: 'title', author: 'author' },
+  { title: 'title', author: 'author', id: getUniqueId() },
+  { title: 'title', author: 'author', id: getUniqueId() },
+  { title: 'title', author: 'author', id: getUniqueId() },
 ];
 
 // Creating the reducer function to handle this
