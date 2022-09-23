@@ -63,7 +63,7 @@ const booksSlice = createSlice({
         console.log('the error is ', action.error.message);
       })
       .addCase(addNewBook.fulfilled, (state, action) => {
-        (state.status = 'the payload '), action.payload;
+        console.log('The payload at this point is ', action.payload);
       });
   },
 });

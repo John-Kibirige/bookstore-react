@@ -9,12 +9,28 @@ const CreateNewBook = () => {
   const [formData, setFormData] = useState(initialLocalState);
   const dispatch = useDispatch();
 
+  const getRandomCategory = () => {
+    const categories = [
+      'FIction',
+      'Classics',
+      'Science',
+      'Arts',
+      'Love and Romance',
+      'Politics',
+      'Psychology',
+      'Geology',
+      'Physics',
+      'Botany',
+    ];
+
+    const randomInd = Math.floor(Math.random() * 10);
+    return categories[randomInd];
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.title.trim() && formData.author.trim()) {
-      dispatch(
-        addBookActionCreator(formData.title, formData.author, nanoid())
-      );
+      dispatch(addBookActionCreator(formData.title, formData.author, nanoid()));
     }
     setFormData(initialLocalState);
   };
