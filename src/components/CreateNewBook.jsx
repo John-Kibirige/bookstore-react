@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { v4 as getUniqueId } from 'uuid';
-import { addBookActionCreator } from '../redux/books/book';
+import { nanoid } from '@reduxjs/toolkit';
+import {} from '../redux/books/book';
 
 const CreateNewBook = () => {
   const initialLocalState = { title: '', author: '' };
@@ -13,7 +13,7 @@ const CreateNewBook = () => {
     e.preventDefault();
     if (formData.title.trim() && formData.author.trim()) {
       dispatch(
-        addBookActionCreator(formData.title, formData.author, getUniqueId())
+        addBookActionCreator(formData.title, formData.author, nanoid())
       );
     }
     setFormData(initialLocalState);
