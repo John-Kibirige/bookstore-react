@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const BASE_URL =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3o9S2oBwOumJbhv8h11Y/books';
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3o9S2oBwOumJbhv8h11Y/books/';
 
 // Actions
 const ADD_BOOK = 'bookstore/book/ADD_BOOK';
@@ -12,11 +12,10 @@ const FETCH_BOOK = 'bookstore/book/FETCH_BOOK';
 const initialState = {
   books: [],
   status: 'idle',
-  error: null
 };
 
 // async functions
-const addNewBook = createAsyncThunk(ADD_BOOK, async (initialState) => {
+export const addNewBook = createAsyncThunk(ADD_BOOK, async (initialState) => {
   try {
     const response = await axios.post(BASE_URL, initialState);
     return response.data;
@@ -25,40 +24,43 @@ const addNewBook = createAsyncThunk(ADD_BOOK, async (initialState) => {
   }
 });
 
-const fetchBooks = createAsyncThunk(FETCH_BOOK, async () => {
- try {
+export const fetchBooks = createAsyncThunk(FETCH_BOOK, async () => {
+  try {
     const response = await axios.get(BASE_URL);
-  return response.data;
- }catch(err){
-    return err.message
- }
+    return response.data;
+  } catch (err) {
+    return err.message;
+  }
+});
+
+export const deleteBook = createAsyncThunk(REMOVE_BOOK, async (itemId) => {
+  try {
+    const response = await axios.delete(`${BASE_URL}${itemId}`);
+    return response.data;
+  } catch (err) {
+    return err.message;
+  }
 });
 
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    
-  }
-})
-// Creating the reducer function to handle this
-const bookReducer = (state = [], action) => {
-  switch (action.type) {
-    case ADD_BOOK:
-      return [
-        ...state,
-        {
-          title: action.title,
-          author: action.author,
-          id: action.id,
-        },
-      ];
-    case REMOVE_BOOK:
-      return state.filter((bk) => bk.id !== action.id);
-    default:
-      return state;
-  }
-};
+  extraReducers(builder) {
+    builder
+      .addCase(fetchBooks.pending, (state, action) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchBooks.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        console.log('the action  payload at this point ', action.payload);
+      })
+      .addCase(fetchBooks.rejected, (state, action) => {
+        console.log('the error is ', action.error.message);
+      })
+      .addCase(addNewBook, fulfilled, (state, action) => {
+        (state.status = 'the payload '), action.payload;
+      });
+  },
+});
 
-export { addBookActionCreator, removeBookActionCreator };
-export default bookReducer;
+export default booksSlice.reducer;
