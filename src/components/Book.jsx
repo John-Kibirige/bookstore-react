@@ -1,8 +1,8 @@
 import React from 'react';
-import {} from '../redux/books/book';
+import { deleteBook } from '../redux/books/book';
 import { useDispatch } from 'react-redux';
 
-const Book = ({ title, author, id }) => {
+const Book = ({ title, author, id, category }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
