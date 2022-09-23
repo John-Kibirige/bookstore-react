@@ -12,10 +12,11 @@ const FETCH_BOOK = 'bookstore/book/FETCH_BOOK';
 const initialState = {
   books: [],
   status: 'idle',
+  error: null
 };
 
-// async function for adding a new book
-const addNewPost = createAsyncThunk(ADD_BOOK, async (initialState) => {
+// async functions
+const addNewBook = createAsyncThunk(ADD_BOOK, async (initialState) => {
   try {
     const response = await axios.post(BASE_URL, initialState);
     return response.data;
@@ -24,25 +25,22 @@ const addNewPost = createAsyncThunk(ADD_BOOK, async (initialState) => {
   }
 });
 
-// Action creators
-// const addBookActionCreator = (title, author, id) => ({
-//   type: ADD_BOOK,
-//   title,
-//   author,
-//   id,
-// });
+const fetchBooks = createAsyncThunk(FETCH_BOOK, async () => {
+ try {
+    const response = await axios.get(BASE_URL);
+  return response.data;
+ }catch(err){
+    return err.message
+ }
+});
 
-// const removeBookActionCreator = (id) => ({
-//   type: REMOVE_BOOK,
-//   id,
-// });
-
-// const initialState = [
-//   { title: 'title', author: 'author', id: getUniqueId() },
-//   { title: 'title', author: 'author', id: getUniqueId() },
-//   { title: 'title', author: 'author', id: getUniqueId() },
-// ];
-
+const booksSlice = createSlice({
+  name: 'books',
+  initialState,
+  reducers: {
+    
+  }
+})
 // Creating the reducer function to handle this
 const bookReducer = (state = [], action) => {
   switch (action.type) {
