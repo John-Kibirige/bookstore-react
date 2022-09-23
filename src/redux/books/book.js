@@ -6,11 +6,11 @@ const BASE_URL =
 
 // Actions
 const ADD_BOOK = 'bookstore/book/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/book/REMOVE_BOOK';
+const REMOVE_BOOK = 'bookstore/book/DELETE_BOOK';
 const FETCH_BOOK = 'bookstore/book/FETCH_BOOK';
 
 const initialState = {
-  books: [],
+  books: {},
   status: 'idle',
 };
 
@@ -47,7 +47,19 @@ const booksSlice = createSlice({
   initialState,
   reducers: {
     bookAdded: (state, action) => {
-      return [...state.books, action.payload];
+      return {
+        ...state,
+        books: {
+          ...state.books,
+          [action.payload.item_id]: [
+            {
+              title: action.payload.title,
+              category: action.payload.category,
+              author: action.payload.author,
+            },
+          ],
+        },
+      };
     },
   },
   extraReducers(builder) {
@@ -57,7 +69,7 @@ const booksSlice = createSlice({
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.books = Object.entries(action.payload);
+        state.books = action.payload;
       })
       .addCase(fetchBooks.rejected, (state, action) => {
         console.log('the error is ', action.error.message);
@@ -69,3 +81,4 @@ const booksSlice = createSlice({
 });
 
 export default booksSlice;
+export const { bookAdded } = booksSlice.actions;
