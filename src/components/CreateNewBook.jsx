@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
-import {} from '../redux/books/book';
+import { addNewBook } from '../redux/books/book';
 
 const CreateNewBook = () => {
   const initialLocalState = { title: '', author: '' };
@@ -30,7 +30,13 @@ const CreateNewBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.title.trim() && formData.author.trim()) {
-      dispatch(addBookActionCreator(formData.title, formData.author, nanoid()));
+      const postMethodBody = {
+        item_id: nanoid(),
+        title: formData.title,
+        author: formData.author,
+        category: getRandomCategory(),
+      };
+      dispatch(addNewBook(postMethodBody));
     }
     setFormData(initialLocalState);
   };
