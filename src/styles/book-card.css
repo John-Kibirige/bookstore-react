@@ -25,14 +25,48 @@
 }
 .part-one .author {
   font-size: 16px;
-  margin-block: -3px 31px;
+  margin-block: -3px 12px;
   font-family: RobotoSlab;
   font-weight: 300;
   color: var(--primary-variant);
 }
 
+.btn-set button {
+  font-family: RobotoSlab;
+  background-color: inherit;
+  font-weight: 300;
+  color: var(--primary-variant);
+  border: none;
+  padding-inline: 13px;
+  font-size: 16px;
+}
+
+.btn-set button:first-of-type {
+  padding-left: 0;
+}
+
+.btn-set button:not(:last-of-type) {
+  border-right: thin solid gray;
+}
+.btn-set button:hover {
+  cursor: pointer;
+  color: var(--monte-blue);
+}
+
 .dashboard {
   display: flex;
+  font-family: var(--motenserrat);
+  color: var(--monte-dark-gray);
+  align-items: center;
+}
+
+.dashboard .complete-per .completion {
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-size: 2rem;
+}
+.dashboard .complete-per .text-completion {
+  opacity: 0.5;
+  font-size: 14px;
 }
 
 svg {

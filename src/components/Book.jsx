@@ -35,7 +35,7 @@ const Book = ({ title, author, id, category }) => {
           </svg>
           <div className='complete-per'>
             <p className='completion'>{percentageCompletion}%</p>
-            <p className='text-completioin'>Completed</p>
+            <p className='text-completion'>Completed</p>
           </div>
         </div>
       </div>
