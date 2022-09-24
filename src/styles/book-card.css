@@ -1,5 +1,4 @@
 .book-container {
-  background-color: var(--white);
   margin: 1rem 6.25rem;
   padding: 2rem 7.438rem 1.625rem 1.688rem;
   border-radius: 4px;
@@ -22,6 +21,7 @@
   font-weight: bold;
   color: var(--monte-dark-gray);
 }
+
 .part-one .title {
   margin: 0.188rem 20.188rem 0 0;
   font-family: var(--roboto-slab);
@@ -31,22 +31,59 @@
   color: var(--monte-dark-gray);
   text-transform: capitalize;
 }
+
 .part-one .author {
   font-size: 16px;
   margin-block: -3px 12px;
-  font-family: RobotoSlab;
+  font-family: var(--motenserrat);
   font-weight: 300;
   color: var(--primary-variant);
 }
 
+.part-three {
+  font-family: var(--roboto-slab);
+  color: var(--monte-dark-gray);
+  margin-left: -121px;
+}
+
+.part-three .current-chapter {
+  margin: 0.063rem 3.625rem 0 0;
+  opacity: 0.5;
+  font-size: 0.813rem;
+  font-weight: 300;
+}
+
+.part-three p {
+  margin: 0.438rem 6.813rem 0.25rem 0;
+  font-size: 1rem;
+  letter-spacing: -0.4px;
+}
+
+.part-three button {
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: var(--white);
+  font-weight: 300;
+  background-color: var(--monte-blue);
+  border: none;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  margin-top: 16px;
+}
+
 .btn-set button {
-  font-family: RobotoSlab;
+  font-family: var(--motenserrat);
   background-color: inherit;
   font-weight: 300;
   color: var(--primary-variant);
   border: none;
   padding-inline: 13px;
   font-size: 16px;
+}
+
+.part-three button:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .btn-set button:first-of-type {
@@ -56,6 +93,7 @@
 .btn-set button:not(:last-of-type) {
   border-right: thin solid gray;
 }
+
 .btn-set button:hover {
   cursor: pointer;
   color: var(--monte-blue);
@@ -76,6 +114,7 @@
   margin: 0.063rem 5.75rem 0 0.688rem;
   font-size: 2rem;
 }
+
 .dashboard .complete-per .text-completion {
   opacity: 0.5;
   font-size: 14px;
@@ -106,41 +145,6 @@ svg {
   stroke-dashoffset: 235;
   stroke: var(--monte-blue);
   animation: progress-1 1s ease-out;
-}
-
-.part-three {
-  font-family: var(--roboto-slab);
-  color: var(--monte-dark-gray);
-  margin-left: -121px;
-}
-.part-three .current-chapter {
-  margin: 0.063rem 3.625rem 0 0;
-  opacity: 0.5;
-  font-size: 0.813rem;
-  font-weight: 300;
-}
-
-.part-three p {
-  margin: 0.438rem 6.813rem 0.25rem 0;
-  font-size: 1rem;
-  letter-spacing: -0.4px;
-}
-
-.part-three button {
-  letter-spacing: 0.5px;
-  text-align: center;
-  color: var(--white);
-  font-weight: 300;
-  background-color: var(--monte-blue);
-  border: none;
-  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
-  border-radius: 3px;
-  margin-top: 16px;
-}
-
-.part-three button:hover {
-  cursor: pointer;
-  opacity: 0.7;
 }
 
 .seperator {
