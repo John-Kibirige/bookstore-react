@@ -2,12 +2,13 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
-import { addNewBook, bookAdded } from '../redux/books/book';
+import { addNewBook } from '../redux/books/book';
 
 const CreateNewBook = () => {
   const initialLocalState = { title: '', author: '' };
   const [formData, setFormData] = useState(initialLocalState);
   const dispatch = useDispatch();
+
   const getRandomCategory = () => {
     const categories = [
       'FIction',
@@ -35,8 +36,7 @@ const CreateNewBook = () => {
         author: formData.author,
         category: getRandomCategory(),
       };
-      dispatch(addNewBook(postMethodBody));
-      dispatch(bookAdded(postMethodBody));
+      dispatch(addNewBook(postMethodBody)).unwrap();
     }
     setFormData(initialLocalState);
   };
