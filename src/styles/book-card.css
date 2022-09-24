@@ -29,6 +29,7 @@
   font-weight: bold;
   letter-spacing: -0.2px;
   color: var(--monte-dark-gray);
+  text-transform: capitalize;
 }
 .part-one .author {
   font-size: 16px;
@@ -143,8 +144,8 @@ svg {
 }
 
 .seperator {
-  border-right: none;
   height: 65%;
-  border-color: #fff;
   align-self: center;
+  border: none;
+  border-right: 2px solid #e4e4e4;
 }

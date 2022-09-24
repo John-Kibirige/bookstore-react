@@ -10,6 +10,8 @@
   --monte-dark-gray: #121212;
   --light-reddish-white: #fafafa;
   --primary-variant: #4386bf;
+  --plain-gray: #888;
+  --very-light-pink: #c4c4c4;
 }
 
 html {
@@ -35,4 +37,9 @@ a {
 
 a:visited {
   color: var(--monte-dark-gray);
+}
+
+.seperator-helper {
+  border: none;
+  border-bottom: 2px solid #e4e4e4;
 }

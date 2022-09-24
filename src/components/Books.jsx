@@ -30,6 +30,7 @@ const Books = () => {
   return (
     <section className='books'>
       <div className='book-elements'>{bookElements}</div>
+      <hr className='longest-seperator margin-helper seperator-helper' />
       <CreateNewBook />
     </section>
   );

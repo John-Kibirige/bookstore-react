@@ -1,0 +1,65 @@
+.margin-helper {
+  margin-inline: 100px;
+}
+
+.longest-seperator {
+  margin-block: 38px;
+}
+
+.form {
+  margin-bottom: 86px;
+}
+
+.form-inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form h3 {
+  margin: 1.813rem 32.75rem 1.188rem 0;
+  font-family: var(--motenserrat);
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: var(--plain-gray);
+  text-transform: uppercase;
+}
+
+input[type='text'] {
+  border: thin solid gray;
+  padding: 10px;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+input[type='text']::placeholder {
+  font-family: var(--motenserrat);
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  color: var(--very-light-pink);
+}
+
+.bk-title {
+  width: 57%;
+}
+
+.form .author {
+  width: 22%;
+}
+
+.add-book-btn {
+  background-color: var(--monte-blue);
+  color: var(--white);
+  text-transform: uppercase;
+  padding: 14px 53px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 16%;
+}
+
+.add-book-btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
