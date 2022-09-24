@@ -18,7 +18,10 @@ const initialState = {
 export const addNewBook = createAsyncThunk(ADD_BOOK, async (initialState) => {
   try {
     const response = await axios.post(BASE_URL, initialState);
-    return response.data;
+    if (response.data === 'Created') {
+      const dataResponse = await axios.get(BASE_URL);
+      return dataResponse.data;
+    }
   } catch (err) {
     return err.message;
   }
@@ -36,7 +39,10 @@ export const fetchBooks = createAsyncThunk(FETCH_BOOK, async () => {
 export const deleteBook = createAsyncThunk(REMOVE_BOOK, async (itemId) => {
   try {
     const response = await axios.delete(`${BASE_URL}${itemId}`);
-    return response.data;
+    if (response.data === 'The book was deleted successfully!') {
+      const res = await axios.get(BASE_URL);
+      return res.data;
+    }
   } catch (err) {
     return err.message;
   }
@@ -75,7 +81,10 @@ const booksSlice = createSlice({
         console.log('the error is ', action.error.message);
       })
       .addCase(addNewBook.fulfilled, (state, action) => {
-        console.log('The payload at this point is ', action.payload);
+        state.books = action.payload;
+      })
+      .addCase(deleteBook.fulfilled, (state, action) => {
+        state.books = action.payload;
       });
   },
 });
