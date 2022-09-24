@@ -1,0 +1,22 @@
+.header {
+  padding: 1.44rem 6.188rem 1.688rem 6.25rem;
+  background-color: var(--white);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.header .logo {
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-family: var(--motenserrat);
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--monte-blue);
+}
+
+.nav-link {
+  margin: 1.125rem 2.563rem 0.688rem 0;
+  font-family: var(--motenserrat);
+  letter-spacing: 1.9px;
+  color: var(--monte-dark-gray);
+}
+
+
