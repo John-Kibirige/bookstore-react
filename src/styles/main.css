@@ -11,7 +11,7 @@
   --light-reddish-white: #fafafa;
   --primary-variant: #4386bf;
   --plain-gray: #888;
-  --very-light-pink: #c4c4c4;
+  --very-light-pink: #958888;
 }
 
 html {
@@ -42,4 +42,16 @@ a:visited {
 .seperator-helper {
   border: none;
   border-bottom: 2px solid #e4e4e4;
+}
+
+.btn-categories {
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: var(--white);
+  font-weight: 300;
+  background-color: var(--monte-blue);
+  border: none;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  margin-top: 16px;
 }

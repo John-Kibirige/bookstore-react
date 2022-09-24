@@ -38,6 +38,7 @@ input[type='text']::placeholder {
   font-size: 1rem;
   letter-spacing: -0.15px;
   color: var(--very-light-pink);
+  text-transform: capitalize;
 }
 
 .bk-title {

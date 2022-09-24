@@ -57,7 +57,7 @@ const CreateNewBook = () => {
         <input
           type='text'
           className='bk-title'
-          placeholder='title'
+          placeholder='book title'
           value={formData.title}
           name='title'
           onChange={handleChange}
