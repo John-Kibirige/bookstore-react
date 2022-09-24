@@ -6,7 +6,7 @@ const Book = ({ title, author, id, category }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(removeBookActionCreator(id));
+    dispatch(deleteBook(id));
   };
 
   return (
