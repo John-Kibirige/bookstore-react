@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&display=swap');
+
+:root {
+  --motenserrat: 'Montserrat', sans-serif;
+  --roboto-slab: 'Roboto Slab', serif;
+  --pale-gray: #f5f6fa;
+  --white: #fff;
+  --monte-blue: #0290ff;
+  --monte-dark-gray: #121212;
+  --light-reddish-white: #fafafa;
+  --primary-variant: #4386bf;
+  --plain-gray: #888;
+  --very-light-pink: #958888;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+body {
+  background-color: var(--pale-gray);
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:visited {
+  color: var(--monte-dark-gray);
+}
+
+.seperator-helper {
+  border: none;
+  border-bottom: 2px solid #e4e4e4;
+}
+
+.btn-categories {
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: var(--white);
+  font-weight: 300;
+  background-color: var(--monte-blue);
+  border: none;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  margin-top: 16px;
+}

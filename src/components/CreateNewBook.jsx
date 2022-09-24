@@ -51,26 +51,28 @@ const CreateNewBook = () => {
     });
   };
   return (
-    <form action='#' onSubmit={handleSubmit}>
+    <form action='#' onSubmit={handleSubmit} className='margin-helper form'>
       <h3>Add new book</h3>
-      <input
-        type='text'
-        className='bk-title'
-        placeholder='title'
-        value={formData.title}
-        name='title'
-        onChange={handleChange}
-      />
-      <input
-        type='text'
-        className='author'
-        placeholder='author'
-        value={formData.author}
-        name='author'
-        onChange={handleChange}
-      />
+      <div className='form-inputs'>
+        <input
+          type='text'
+          className='bk-title'
+          placeholder='book title'
+          value={formData.title}
+          name='title'
+          onChange={handleChange}
+        />
+        <input
+          type='text'
+          className='author'
+          placeholder='author'
+          value={formData.author}
+          name='author'
+          onChange={handleChange}
+        />
 
-      <button className='add-book-btn'>add book</button>
+        <button className='add-book-btn'>add book</button>
+      </div>
     </form>
   );
 };
