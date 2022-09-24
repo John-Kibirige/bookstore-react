@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CreateNewBook from './CreateNewBook';
 import Book from './Book';
@@ -28,10 +28,10 @@ const Books = () => {
   });
 
   return (
-    <div className='books-container'>
+    <section className='books'>
       <div className='book-elements'>{bookElements}</div>
       <CreateNewBook />
-    </div>
+    </section>
   );
 };
 

@@ -1,7 +1,8 @@
 .header {
   padding: 1.44rem 6.188rem 1.688rem 6.25rem;
   background-color: var(--white);
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 36px;
 }
 
 .header .logo {
@@ -18,5 +19,3 @@
   letter-spacing: 1.9px;
   color: var(--monte-dark-gray);
 }
-
-

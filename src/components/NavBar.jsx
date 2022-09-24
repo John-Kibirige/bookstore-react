@@ -8,10 +8,10 @@ const NavBar = () => (
         Bookstore CMS
       </Link>
       <Link to='/' className='nav-link'>
-        Books
+        BOOKS
       </Link>
       <Link to='categories' className='nav-link'>
-        Categories
+        CATEGORIES
       </Link>
     </nav>
   </header>
