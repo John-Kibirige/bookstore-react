@@ -27,27 +27,29 @@ const Book = ({ title, author, id, category }) => {
         </div>
       </div>
 
-      <div className='part-two'>
-        <div className='dashboard'>
-          <svg>
-            <circle class='bg' cx='32' cy='32' r='28' />
-            <circle class='meter-1' cx='32' cy='32' r='28' />
-          </svg>
-          <div className='complete-per'>
-            <p className='completion'>{percentageCompletion}%</p>
-            <p className='text-completion'>Completed</p>
+      <div className='two-three-wrapper'>
+        <div className='part-two'>
+          <div className='dashboard'>
+            <svg>
+              <circle class='bg' cx='32' cy='32' r='28' />
+              <circle class='meter-1' cx='32' cy='32' r='28' />
+            </svg>
+            <div className='complete-per'>
+              <p className='completion'>{percentageCompletion}%</p>
+              <p className='text-completion'>Completed</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <hr className='seperator' />
+        <hr className='seperator' />
 
-      <div className='part-three'>
-        <h3 className='current-chapter'>Current chapter</h3>
-        <p>Chapter 17</p>
-        <button className='update-progress' type='button'>
-          UPDATE PROGRESS
-        </button>
+        <div className='part-three'>
+          <h3 className="current-chapter">CURRENT CHAPTER</h3>
+          <p>Chapter 17</p>
+          <button className='update-progress' type='button'>
+            UPDATE PROGRESS
+          </button>
+        </div>
       </div>
     </div>
   );
