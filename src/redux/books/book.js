@@ -1,8 +1,8 @@
+/* eslint-disable consistent-return */
 import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const BASE_URL =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3o9S2oBwOumJbhv8h11Y/books/';
+const BASE_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3o9S2oBwOumJbhv8h11Y/books/';
 
 // Actions
 const ADD_BOOK = 'bookstore/book/ADD_BOOK';
@@ -52,39 +52,42 @@ const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    bookAdded: (state, action) => {
-      return {
-        ...state,
-        books: {
-          ...state.books,
-          [action.payload.item_id]: [
-            {
-              title: action.payload.title,
-              category: action.payload.category,
-              author: action.payload.author,
-            },
-          ],
-        },
-      };
-    },
+    bookAdded: (state, action) => ({
+      ...state,
+      books: {
+        ...state.books,
+        [action.payload.item_id]: [
+          {
+            title: action.payload.title,
+            category: action.payload.category,
+            author: action.payload.author,
+          },
+        ],
+      },
+    }),
   },
   extraReducers(builder) {
     builder
-      .addCase(fetchBooks.pending, (state, action) => {
-        state.status = 'loading';
+      .addCase(fetchBooks.pending, (state) => {
+        const st = state;
+        st.status = 'loading';
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.books = action.payload;
+        const st = state;
+        st.status = 'succeeded';
+
+        st.books = action.payload;
       })
       .addCase(fetchBooks.rejected, (state, action) => {
-        console.log('the error is ', action.error.message);
+        throw new Error('The error is ', action.error);
       })
       .addCase(addNewBook.fulfilled, (state, action) => {
-        state.books = action.payload;
+        const st = state;
+        st.books = action.payload;
       })
       .addCase(deleteBook.fulfilled, (state, action) => {
-        state.books = action.payload;
+        const st = state;
+        st.books = action.payload;
       });
   },
 });

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from './redux/configureStore';
 import App from './App';
-import {fetchBooks }from './redux/books/book';
+import {fetchBooks} from './redux/books/book';
 
 store.dispatch(fetchBooks());
 

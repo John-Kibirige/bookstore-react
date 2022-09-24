@@ -1,8 +1,8 @@
 import React from 'react';
-import { deleteBook } from '../redux/books/book';
 import { useDispatch } from 'react-redux';
+import { deleteBook } from '../redux/books/book';
 
-const Book = ({ title, author, id, category }) => {
+const Book = ({ title, author, id }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -13,7 +13,9 @@ const Book = ({ title, author, id, category }) => {
     <div className='book-container'>
       <h2>{title}</h2>
       <p>{author}</p>
-      <button onClick={handleClick}>delete</button>
+      <button onClick={handleClick} type='button'>
+        delete
+      </button>
     </div>
   );
 };
