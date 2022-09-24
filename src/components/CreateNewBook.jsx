@@ -1,20 +1,42 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { v4 as getUniqueId } from 'uuid';
-import { addBookActionCreator } from '../redux/books/book';
+import { nanoid } from '@reduxjs/toolkit';
+import { addNewBook } from '../redux/books/book';
 
 const CreateNewBook = () => {
   const initialLocalState = { title: '', author: '' };
   const [formData, setFormData] = useState(initialLocalState);
   const dispatch = useDispatch();
 
+  const getRandomCategory = () => {
+    const categories = [
+      'FIction',
+      'Classics',
+      'Science',
+      'Arts',
+      'Love and Romance',
+      'Politics',
+      'Psychology',
+      'Geology',
+      'Physics',
+      'Botany',
+    ];
+
+    const randomInd = Math.floor(Math.random() * 10);
+    return categories[randomInd];
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.title.trim() && formData.author.trim()) {
-      dispatch(
-        addBookActionCreator(formData.title, formData.author, getUniqueId())
-      );
+      const postMethodBody = {
+        item_id: nanoid(),
+        title: formData.title,
+        author: formData.author,
+        category: getRandomCategory(),
+      };
+      dispatch(addNewBook(postMethodBody)).unwrap();
     }
     setFormData(initialLocalState);
   };
